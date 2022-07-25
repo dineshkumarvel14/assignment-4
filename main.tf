@@ -5,12 +5,12 @@ terraform {
       version = "4.23.0"
     }
   }
-#backend "s3" {
- #   bucket = "tftraining2022remotebackend-27"
-    #key    = "my.tfstate"
-   # region = "eu-west-2"
-   # dynamodb_table = "mytableforlocking"
- # }
+backend "s3" {
+    bucket = "tftraining2022remotebackend-27"
+    key    = "my.tfstate"
+    region = "eu-west-2"
+    dynamodb_table = "mytableforlocking"
+  }
 }
 
 resource "aws_vpc" "Main" {               
