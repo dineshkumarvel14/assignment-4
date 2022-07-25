@@ -6,7 +6,7 @@ terraform {
     }
   }
 backend "s3" {
-    bucket = "tftraining2022remotebackend"
+    bucket = "tftraining2022remotebackend-27"
     key    = "webdev/my.tfstate"
     region = "eu-west-2"
    dynamodb_table = "mytableforlocking"
