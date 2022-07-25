@@ -4,11 +4,6 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.0"
     }
-resource "aws_instance" "EC2-user" {
-  ami  = "ami-078a289ddf4b09ae0"
-  instance_type = "t2.micro"
-  #network_interface_id = aws_network_interface.PublicRT.id
-}
   }
 backend "s3" {
     bucket = "tftraining2022remotebackend"
@@ -102,6 +97,11 @@ resource "aws_security_group" "Sec_Group" {
     protocol        = "-1"
     cidr_blocks     = ["0.0.0.0/0"]
   }
+}
+  resource "aws_instance" "EC2-user" {
+  ami  = "ami-078a289ddf4b09ae0"
+  instance_type = "t2.micro"
+  #network_interface_id = aws_network_interface.PublicRT.id
 }
 
 
